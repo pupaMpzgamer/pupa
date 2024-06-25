@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>
+      App BMI
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center" [fullscreen]="true">
+  <img src="../../assets/img/bmi.png" width="130">
+  <ion-card color="success" class="ion-padding">
+    <ion-item>
+      <ion-input label="กรอกน้ำหนัก" placeholder="kg" [(ngModel)]="weight"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input label="กรอกส่วนสูง" placeholder="cm" [(ngModel)]="hight"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button size="large" expand="block" color="warning" (click)="oncal()">คำนวณ</ion-button>
+  </ion-card>
+
+  <ion-card color="secondary">
+    <ion-card-header>
+        <ion-card-subtitle>ผลลัพธ์</ion-card-subtitle>
+        <ion-card-title>{{ result | number: '1.0-3' }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="danger">
+    <ion-card-header>
+        <ion-card-subtitle>แปรผล</ion-card-subtitle>
+        <ion-card-title>{{ result_text }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+</ion-content>
